@@ -21,7 +21,7 @@ int main(void){
 	
 	// complete the rest of the code here
 	// use pointer to modify the values
-	int (*row_ptr)[4] = image; 
+	//int (*row_ptr)[4] = image; 
 	
 	return 0;
 
