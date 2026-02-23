@@ -55,10 +55,24 @@ int main(void) {
 
 	// Complete your code here
     switch (choice) {
-        case :
+        case 1:
+            converted = amount * USD_TO_EUR;
+            break;
+        case 2:
+            converted = amount * EUR_TO_USD;
+            break;
+        case 3:
+            converted = amount * USD_TO_GBP;
+            break;
+        case 4:
+            converted = amount * GBP_TO_USD;
             break;
         default:
             printf("Invalid option\n");
+    }
+
+    if (choice >= 1 && choice <= 4) {
+        printf("Converted: %.2f\n", converted);
     }
 
     return 0;

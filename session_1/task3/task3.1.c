@@ -42,11 +42,13 @@
  */
  
 #include <stdio.h>
+#include <string.h>
 
 int main(void) {
     float units;
     float bill = 0.0;
     int customerType;
+    char strCustomerType[15] = "";
 
     printf("Enter units consumed: ");
     scanf("%f", &units);
@@ -57,25 +59,41 @@ int main(void) {
     /* subtask 1: calculate base bill using slabs */
 	// complete your code here
     if (units <= 100) {
-        bill = units * 2.0;
-		// to do
+        bill += units * 2.0;
+    } else if (units <= 300) {
+        bill += 100 * 2.0;
+        bill += (units - 100) * 3.5;
+    } else {
+        bill += 100 * 2.0;
+        bill += 200 * 3.5;
+        bill += (units - 300) * 5;
     }
 
     /* subtask 2: apply surcharge based on customer type */
 	// complete your code here
     switch (customerType) {
         case 1:
-            // to do
+            strcpy(strCustomerType, "Domestic");
 			break;
-
+        case 2:
+            strcpy(strCustomerType, "Commercial");
+            bill += bill * 0.1;
+            break;
+        case 3:
+            strcpy(strCustomerType, "Industry");
+            bill += bill * 0.2;
+            break;
         default:
             printf("Invalid customer type\n");
             return 1;
     }
 
     /* Output */
-    printf("Units consumed: %.2f\n", units);
-    printf("Total bill amount: %.2f\n", bill);
+    if (strcmp(strCustomerType, "") != 0) {
+        printf("Customer type: %s\n", strCustomerType);
+        printf("Units consumed: %.2f\n", units);
+        printf("Total bill amount: %.2f\n", bill);
+    }
 
     return 0;
 }
