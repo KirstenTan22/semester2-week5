@@ -10,8 +10,25 @@
 #include <stdio.h>
 
 int main(void) {
+
+	int check, num = 0, sum = 0;
+	char buffer[50];
  
 	printf("--- Average Calculator ---\n");
+	
+	while (num != -1) {
+		printf("Enter a positive integer: ");
+		fgets(buffer, sizeof(buffer), stdin);
+		check = sscanf(buffer, "%d", &num);
+
+		if (!check) {
+			printf("Error: Please enter a positive integer.\n");
+		} else if (num != -1) {
+			sum += num;
+		}
+	}
+
+	printf("Sum: %d\n", sum);
     	
 	return 0;
 }

@@ -8,8 +8,23 @@
  */
 
 #include <stdio.h>
+#include <stdbool.h>
 
 int main(void) {
-    
+	bool isPrime = true;
+
+	for (int i=2; i<=100; i++) {
+		isPrime = true;
+		for (int j=1; j<=i/2; j++) {
+			if (i % j == 0 && j != 1) {
+				isPrime = false;
+				break;
+			}
+		}
+		if (isPrime) {
+			printf("%d\n", i);
+		}
+	}
+
 	return 0;
 }
