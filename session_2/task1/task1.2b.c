@@ -1,6 +1,7 @@
 //Week 5, Session 2
 
 # include <stdio.h>
+# include <string.h>
 
 int main(void){
 /* Task 1.2b
@@ -12,8 +13,13 @@ int main(void){
  *     if choice == 'q':
  *         break
  */
-	char choice;
+	char choice[10] = "";
 	// complete the rest of the code here
+	while (strcmp(choice, "q")) {
+		printf("Enter 'q' to quit: ");
+		fgets(choice, sizeof(choice), stdin);
+		choice[strcspn(choice, "\n")] = '\0';
+	}
 	
     return 0;
 }

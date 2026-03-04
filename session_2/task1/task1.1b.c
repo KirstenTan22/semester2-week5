@@ -16,8 +16,16 @@ int main(void){
     int numbers[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 	int squares[10];    // max possible size
 	int count = 0;   // actual number of results
+	int num_squared;
 	
 	//todo: convert the list comprehension
+	for(int i=0; i<10; i++) {
+		num_squared = numbers[i] * numbers[i];
+		if (num_squared % 2 == 0) {
+			squares[count] = num_squared;
+			count++;
+		}
+	}
 	
 	//print results
 	for(int i=0; i < count; i++){

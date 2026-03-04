@@ -1,6 +1,7 @@
 //Week 5, Session 2
 
 # include <stdio.h>
+# include <stdbool.h>
 
 int main(void){
 /* Task 1.4
@@ -15,6 +16,34 @@ int main(void){
  * When 1 is entered, print "You selected Coffee" and then redisplay the menu.
  * The same applies to other options except 0. When 0 is entered, the program terminates.
  */
+    int choice;
+
+    while (true) {
+        printf("Menu:\n");
+        printf("1 - Coffee\n");
+        printf("2 - Tea\n");
+        printf("3 - Cold drinks\n");
+        printf("0 - to quit\n\n");
+        printf("Enter choice: ");
+        scanf(" %d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("\nYou selected coffee\n\n");
+                break;
+            case 2:
+                printf("\nYou selected tea.\n\n");
+                break;
+            case 3:
+                printf("\nYou selected cold drinks.\n\n");
+                break;
+            case 0:
+                return 0;
+            default:
+                printf("\nPlease enter a valid choice.\n\n");
+                break;
+        }
+    }
 
     return 0;
 }

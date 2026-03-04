@@ -8,6 +8,16 @@ int main(void){
  * Write a C program to read a series of integers from the user and sum them
  * until a 0 (zero) is entered. Print the sum at the end.
  */
+    int num;
+    int sum = 0;
+
+    do {
+        printf("Enter an integer: ");
+        scanf(" %d", &num);
+        sum += num;
+    } while (num != 0);
+
+    printf("%d\n", sum);
 
 
     return 0;

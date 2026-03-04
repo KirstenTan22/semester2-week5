@@ -10,9 +10,20 @@
  
  #include <stdio.h>
  #include <string.h>
+ #include <stdbool.h>
  
  int main(void) {
 	 
+	char input[100] = "";
+
+	while (true) {
+		printf("Enter a message: ");
+		fgets(input, sizeof(input), stdin);
+		input[strcspn(input, "\n")] = 0;
+		if (strcmp(input, "quit") == 0)
+			break;
+		printf("Your message was: %s\n", input);
+	}
 	 
 	 return 0;
  }
